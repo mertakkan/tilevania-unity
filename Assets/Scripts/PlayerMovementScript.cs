@@ -1,16 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovementScript : MonoBehaviour
 {
+    [SerializeField]
+    private float runSpeed = 10f;
     Vector2 moveInput;
+    Rigidbody2D myRigidbody;
 
-    void Start() { }
+    void Start()
+    {
+        myRigidbody = GetComponent<Rigidbody2D>();
+    }
 
-    void Update() { }
+    void Update()
+    {
+        Run();
+    }
+
+    private void Run()
+    {
+        Vector2 playerVelocity = new Vector2(moveInput.x * runSpeed, myRigidbody.velocity.y);
+        myRigidbody.velocity = playerVelocity;
+    }
 
     void OnMove(InputValue value)
     {
