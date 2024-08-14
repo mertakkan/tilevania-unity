@@ -12,6 +12,9 @@ public class PlayerMovementScript : MonoBehaviour
     Rigidbody2D myRigidbody;
     Animator myAnimator;
 
+    [SerializeField]
+    private float jumpSpeed = 5f;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -44,5 +47,13 @@ public class PlayerMovementScript : MonoBehaviour
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+    }
+
+    void OnJump(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            myRigidbody.velocity += new Vector2(0f, jumpSpeed);
+        }
     }
 }

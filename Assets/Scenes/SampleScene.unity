@@ -6544,9 +6544,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ginger (Player)
       objectReference: {fileID: 0}
+    - target: {fileID: 1578772029581312953, guid: dc69687eda832ea4d8ce8943cb7e86c6, type: 3}
+      propertyPath: m_GravityScale
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578772029581312953, guid: dc69687eda832ea4d8ce8943cb7e86c6, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8856351724375152063, guid: dc69687eda832ea4d8ce8943cb7e86c6, type: 3}
       propertyPath: runSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856351724375152063, guid: dc69687eda832ea4d8ce8943cb7e86c6, type: 3}
+      propertyPath: jumpSpeed
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
