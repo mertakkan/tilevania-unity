@@ -14,6 +14,9 @@ public class PlayerMovementScript : MonoBehaviour
     CapsuleCollider2D myCapsuleCollider;
 
     [SerializeField]
+    private float climbSpeed = 5f;
+
+    [SerializeField]
     private float jumpSpeed = 5f;
 
     void Start()
@@ -27,6 +30,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         Run();
         FlipSprite();
+        ClimbLadder();
     }
 
     private void FlipSprite()
@@ -59,6 +63,23 @@ public class PlayerMovementScript : MonoBehaviour
             {
                 myRigidbody.velocity += new Vector2(0f, jumpSpeed);
             }
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    void ClimbLadder()
+    {
+        if (myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+        {
+            Vector2 climbVelocity = new Vector2(myRigidbody.velocity.x, moveInput.y * climbSpeed);
+            myRigidbody.velocity = climbVelocity;
+        }
+        else
+        {
+            return;
         }
     }
 }
