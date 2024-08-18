@@ -13866,7 +13866,7 @@ MonoBehaviour:
     m_MinDuration: 0
   - m_FullHash: -725336713
     m_VirtualCamera: {fileID: 1528447062}
-    m_ActivateAfter: 1
+    m_ActivateAfter: 0
     m_MinDuration: 0
   m_DefaultBlend:
     m_Style: 1
@@ -14210,6 +14210,10 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4966082730887978088, guid: dc69687eda832ea4d8ce8943cb7e86c6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 0ec67a723f810ae4f8bd42b56432f273, type: 2}
     - target: {fileID: 8856351724375152063, guid: dc69687eda832ea4d8ce8943cb7e86c6, type: 3}
       propertyPath: runSpeed
       value: 5
