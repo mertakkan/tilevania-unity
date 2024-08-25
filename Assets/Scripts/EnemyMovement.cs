@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -23,7 +24,9 @@ public class EnemyMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         moveSpeed = -moveSpeed;
-        FlipEnemyFacing();
+
+        if (other.gameObject.layer != LayerMask.NameToLayer("Player"))
+            FlipEnemyFacing();
     }
 
     private void FlipEnemyFacing()

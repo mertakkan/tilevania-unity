@@ -20200,6 +20200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ginger (Player)
       objectReference: {fileID: 0}
+    - target: {fileID: 1572394004165500890, guid: dc69687eda832ea4d8ce8943cb7e86c6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1578772029581312953, guid: dc69687eda832ea4d8ce8943cb7e86c6, type: 3}
       propertyPath: m_GravityScale
       value: 6
@@ -20219,6 +20223,14 @@ PrefabInstance:
     - target: {fileID: 8856351724375152063, guid: dc69687eda832ea4d8ce8943cb7e86c6, type: 3}
       propertyPath: jumpSpeed
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856351724375152063, guid: dc69687eda832ea4d8ce8943cb7e86c6, type: 3}
+      propertyPath: deathKick.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856351724375152063, guid: dc69687eda832ea4d8ce8943cb7e86c6, type: 3}
+      propertyPath: deathKick.y
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

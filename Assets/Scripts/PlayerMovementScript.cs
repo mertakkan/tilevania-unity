@@ -18,6 +18,9 @@ public class PlayerMovementScript : MonoBehaviour
     bool isAlive = true;
 
     [SerializeField]
+    private Vector2 deathKick = new Vector2(10f, 10f);
+
+    [SerializeField]
     private float climbSpeed = 5f;
 
     [SerializeField]
@@ -49,6 +52,8 @@ public class PlayerMovementScript : MonoBehaviour
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
         {
             isAlive = false;
+            myAnimator.SetTrigger("Dying");
+            myRigidbody.velocity = deathKick;
         }
     }
 
