@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 public class PlayerMovementScript : MonoBehaviour
@@ -14,6 +15,7 @@ public class PlayerMovementScript : MonoBehaviour
     CapsuleCollider2D myBodyCollider;
     BoxCollider2D myFeetCollider;
     float gravityScaleAtStart;
+    bool isAlive = true;
 
     [SerializeField]
     private float climbSpeed = 5f;
@@ -32,9 +34,22 @@ public class PlayerMovementScript : MonoBehaviour
 
     void Update()
     {
+        if (!isAlive)
+        {
+            return;
+        }
         Run();
         FlipSprite();
         ClimbLadder();
+        Die();
+    }
+
+    private void Die()
+    {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
+        {
+            isAlive = false;
+        }
     }
 
     private void FlipSprite()
@@ -56,11 +71,19 @@ public class PlayerMovementScript : MonoBehaviour
 
     void OnMove(InputValue value)
     {
+        if (!isAlive)
+        {
+            return;
+        }
         moveInput = value.Get<Vector2>();
     }
 
     void OnJump(InputValue value)
     {
+        if (!isAlive)
+        {
+            return;
+        }
         if (myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             if (value.isPressed)
